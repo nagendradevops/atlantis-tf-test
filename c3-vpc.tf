@@ -40,7 +40,7 @@ module "vpc" {
   }
 
   tags = {
-    Owner       = "Nagendra"
+    Owner       = "Testing"
     Environment = "dev"
   }
 
