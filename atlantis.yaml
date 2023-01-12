@@ -13,10 +13,8 @@ workflows:
   myworkflow:
     plan:
       steps:
-      - run: rm -rf .terraform
-      - run: terraform init -no-color -reconfigure -input=false
-      - run: terraform plan -lock=false  -out $PLANFILE
-      - run: echo plandone
+       - init
+       - plan
     apply:
       steps:
       - run: echo apply
