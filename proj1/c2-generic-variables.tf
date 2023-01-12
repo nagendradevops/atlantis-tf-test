@@ -1,4 +1,4 @@
-# AWS Region vars
+# AWS Region var config file
 variable "aws_region" {
   description = "Region "
   type        = string
