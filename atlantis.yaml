@@ -16,8 +16,6 @@ workflows:
       - run: rm -rf .terraform
       - run: terraform init -no-color -reconfigure -input=false
       - run: terraform plan -lock=false  -out $PLANFILE
-      - init
-      - plan
       - run: echo plandone
     apply:
       steps:
