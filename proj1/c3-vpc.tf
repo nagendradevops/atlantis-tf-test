@@ -19,7 +19,7 @@ module "vpc" {
   #create_database_nat_gateway_route = true
   #create_database_internet_gateway_route = true
 
-  # NAT Gateways - Outbound Communication
+  # NAT Gateways - Outbound Communication connection
   enable_nat_gateway = true
   single_nat_gateway = true
 
