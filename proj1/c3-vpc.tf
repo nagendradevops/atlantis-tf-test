@@ -1,4 +1,4 @@
-# Create VPC Terraform Module
+# Create VPC Terraform Module in aws
 module "vpc" {
   source  = "terraform-aws-modules/vpc/aws"
   version = "2.78.0"
