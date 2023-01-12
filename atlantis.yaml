@@ -1,11 +1,9 @@
 version: 3
 projects:
 - name: my-project-name
-  branch: /test/
   dir: proj1
   workspace: default
   terraform_version: v0.11.0
-  repo_locking: true
   autoplan:
     when_modified: ["*.tf", "../modules/**/*.tf"]
     enabled: true
