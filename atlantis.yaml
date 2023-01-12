@@ -6,7 +6,7 @@ version: 3
 projects:
 - name: my-project-name
   #branch: /fastly_hw_uat/
-  dir: .
+  dir: proj1
   workspace: default
   terraform_version: v0.14.0
   delete_source_branch_on_merge: true
