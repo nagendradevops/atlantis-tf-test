@@ -15,6 +15,6 @@ provider "aws" {
   profile = "default"
 }
 /*
-Note-1:  AWS Credentials Profile (profile = "default") configured on your local desktop terminal  
+Note-1:  AWS Credentials Profile (profile = "default") configured on your local desktop   
 $HOME/.aws/credentials
 */
