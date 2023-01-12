@@ -1,0 +1,26 @@
+version: 3
+projects:
+- name: my-project-name
+  branch: /test/
+  dir: proj1
+  workspace: default
+  terraform_version: v0.11.0
+  repo_locking: true
+  autoplan:
+    when_modified: ["*.tf", "../modules/**/*.tf"]
+    enabled: true
+  workflow: myworkflow
+workflows:
+  myworkflow:
+    plan:
+      steps:
+      - run: rm -rf .terraform
+      - run: terraform init -no-color -reconfigure -input=false
+      - run: terraform plan -lock=false  -out $PLANFILE
+      - init
+      - plan
+      - run: echo plandone
+    apply:
+      steps:
+      - run: echo apply
+      - apply
