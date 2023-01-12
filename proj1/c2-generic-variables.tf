@@ -1,4 +1,4 @@
-# Input Variables
+# Input Variables for region
 
 # AWS Region
 variable "aws_region" {
