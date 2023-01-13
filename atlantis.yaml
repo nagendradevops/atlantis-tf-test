@@ -1,7 +1,6 @@
 version: 3
 projects:
   - name: development
-    branch: /dev/
     dir: proj1
     workspace: default
     terraform_version: v1.0.4
