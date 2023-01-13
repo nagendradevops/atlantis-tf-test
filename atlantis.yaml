@@ -1,0 +1,21 @@
+version: 3
+projects:
+  - name: development
+    branch: /dev/
+    dir: proj1
+    workspace: default
+    terraform_version: v1.0.4
+    autoplan:
+      when_modified: ["*.tf"]
+      enabled: true
+    apply_requirements: [mergeable, approved]
+    workflow: custom-workflow
+workflows:
+  custom-workflow:
+    plan:
+      steps:
+        - init
+        - plan
+    apply:
+      steps:
+        - apply
