@@ -11,7 +11,7 @@ projects:
     enabled: false
   apply_requirements: [approved]
 workflows:
-  production:
+  development:
    plan:
      steps:
      - init
@@ -23,15 +23,3 @@ workflows:
      - init
      - plan:
          extra_args: ["-var-file", "stag.tfvars"]
-
-
-# version: 3
-# projects:
-#   - dir: . 
-#     name: development    
-#     workflow: development
-#     terraform_version: vv1.6.5
-#     autoplan:
-#       when_modified: ["*.tf"]
-#       enabled: false
-#     apply_requirements: [mergeable, approved]
