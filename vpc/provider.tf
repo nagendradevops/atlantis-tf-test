@@ -19,6 +19,9 @@ terraform {
 provider "aws" {
   region  = var.region
   profile = var.profile
+  shared_config_files      = ["/home/ec2-user/.aws/conf"]
+  shared_credentials_files = ["/home/ec2-user/.aws/credentials"]
+  
 }
 /*
 Note-1:  AWS Credentials Profile (profile = "default") configured on your local desktop terminal  
