@@ -1,17 +1,16 @@
 version: 3
 projects:
-- dir: .
+- dir: atlantis-tf-test/proj1
   name: development
   workflow: development
-- dir: .
-  name: staging
-  workflow: staging
-  terraform_version: v1.6.5
   autoplan:
     enabled: false
+    when_modified: ["*.tf*"]
   apply_requirements: [approved]
+  terraform_version: v1.6.5
+  
 workflows:
-  production:
+  development:
    plan:
      steps:
      - init
@@ -23,15 +22,3 @@ workflows:
      - init
      - plan:
          extra_args: ["-var-file", "stag.tfvars"]
-
-
-# version: 3
-# projects:
-#   - dir: . 
-#     name: development    
-#     workflow: development
-#     terraform_version: vv1.6.5
-#     autoplan:
-#       when_modified: ["*.tf"]
-#       enabled: false
-#     apply_requirements: [mergeable, approved]
