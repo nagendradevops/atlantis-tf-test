@@ -3,14 +3,12 @@ projects:
 - dir: atlantis-tf-test/proj1
   name: development
   workflow: development
-- dir: atlantis-tf-test/proj1
-  name: staging
-  workflow: staging
-  terraform_version: v1.6.5
   autoplan:
-    enabled: true
+    enabled: false
     when_modified: ["*.tf*"]
   apply_requirements: [approved]
+  terraform_version: v1.6.5
+  
 workflows:
   development:
    plan:
