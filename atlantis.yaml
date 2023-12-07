@@ -5,7 +5,7 @@ projects:
   workflow: development
   autoplan:
     enabled: false
-    when_modified: ["*.tf*"]
+    #when_modified: ["*.tf*"]
   apply_requirements: [approved]
   terraform_version: v1.6.5
   
