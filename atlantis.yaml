@@ -1,20 +1,37 @@
 version: 3
 projects:
-  - name: development
-    dir: .
-    workspace: default
-    terraform_version: v1.0.4
-    autoplan:
-      when_modified: ["*.tf"]
-      enabled: true
-    apply_requirements: [mergeable, approved]
-    workflow: custom
-# workflows:
-#   custom-workflow:
-#     plan:
-#       steps:
-#         - init
-#         - plan
-#     apply:
-#       steps:
-#         - apply
+- dir: .
+  name: development
+  workflow: development
+- dir: .
+  name: staging
+  workflow: staging
+  terraform_version: v1.6.5
+  autoplan:
+    enabled: false
+  apply_requirements: [approved]
+workflows:
+  production:
+   plan:
+     steps:
+     - init
+     - plan
+         #extra_args: ["-var-file", "dev.tfvars"]
+  staging:
+   plan:
+     steps:
+     - init
+     - plan:
+         extra_args: ["-var-file", "stag.tfvars"]
+
+
+# version: 3
+# projects:
+#   - dir: . 
+#     name: development    
+#     workflow: development
+#     terraform_version: vv1.6.5
+#     autoplan:
+#       when_modified: ["*.tf"]
+#       enabled: false
+#     apply_requirements: [mergeable, approved]
