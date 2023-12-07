@@ -1,5 +1,3 @@
-# Input Variables
-
 # AWS Region
 variable "aws_region" {
   description = "Region "
