@@ -1,6 +1,6 @@
 version: 3
 projects:
-- dir: atlantis-tf-test/proj1
+- dir: atlantis-tf-test/vpc
   name: development
   workflow: development
   autoplan:
@@ -14,8 +14,8 @@ workflows:
    plan:
      steps:
      - init
-     - plan
-         #extra_args: ["-var-file", "dev.tfvars"]
+     - plan:
+         extra_args: ["-var-file", "terraform.tfvars"]
   staging:
    plan:
      steps:
