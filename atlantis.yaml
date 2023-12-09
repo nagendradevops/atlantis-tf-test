@@ -1,11 +1,11 @@
 version: 3
 projects:
-- dir: atlantis-tf-test/proj1
+- dir: vpc
   name: development
   workflow: development
   autoplan:
     enabled: false
-    when_modified: ["*.tf*"]
+    #when_modified: ["*.tf*"]
   apply_requirements: [approved]
   terraform_version: v1.6.5
   
@@ -14,8 +14,8 @@ workflows:
    plan:
      steps:
      - init
-     - plan
-         #extra_args: ["-var-file", "dev.tfvars"]
+     - plan:
+         extra_args: ["-var-file", "terraform.tfvars"]
   staging:
    plan:
      steps:
